@@ -1,0 +1,2 @@
+# trabalhodeAI
+calculadora py
