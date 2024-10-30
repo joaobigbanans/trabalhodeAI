@@ -1,6 +1,7 @@
 def calcular():
 
     print("Selecione a operação:")
+    print("0. sair")
     print("1. Adição")
     print("2. Subtração")
     print("3. Multiplicação")
@@ -8,6 +9,9 @@ def calcular():
 
     while True:
         escolha = input("Digite o número da operação (1/2/3/4) para encerrar: ")
+                
+        if escolha == '0':
+            break
 
         if escolha in ['1', '2', '3', '4']:
             num1 = float(input("Digite o primeiro número: "))
