@@ -1,3 +1,15 @@
+MAX_HISTORICO = 5
+
+def adicionaAoHistorico(historico, text):
+    if len(historico) == MAX_HISTORICO:
+        del historico[0]
+
+    historico.append(text)
+
+def mostraHistorico(historico):
+    if len(historico) == 0:
+        print("Histórico vazio.")
+
 def calcular():
 
     print("Selecione a operação:")
@@ -29,23 +41,23 @@ def calcular():
             if escolha == '1':
                 resultado = num1 + num2
                 print(f"{num1} + {num2} = {resultado}")
-                historico.append(f"{num1} + {num2} = {resultado}")
+                adicionaAoHistorico(historico, f"{num1} + {num2} = {resultado}")
 
             elif escolha == '2':
                 resultado = num1 - num2
                 print(f"{num1} - {num2} = {resultado}")
-                historico.append(f"{num1} - {num2} = {resultado}")
-
+                adicionaAoHistorico(historico, f"{num1} - {num2} = {resultado}")
+                
             elif escolha == '3':
                 resultado = num1 * num2
                 print(f"{num1} * {num2} = {resultado}")
-                historico.append(f"{num1} * {num2} = {resultado}")
+                adicionaAoHistorico(historico, f"{num1} * {num2} = {resultado}")
 
             elif escolha == '4':
                 if num2 != 0:
                     resultado = num1 / num2
                     print(f"{num1} / {num2} = {resultado}")
-                    historico.append(f"{num1} / {num2} = {resultado}")
+                    adicionaAoHistorico(historico, f"{num1} / {num2} = {resultado}")
                 else:
                     print("Erro: Divisão por zero não é permitida.")
 
