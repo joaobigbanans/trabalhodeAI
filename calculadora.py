@@ -1,5 +1,13 @@
 MAX_HISTORICO = 5
 
+def inputint(text):
+    print(text)
+    while True:
+        try:
+            return int(input())
+        except ValueError:
+            print("Valor não numerico. Introduza novamente")
+
 def adicionaAoHistorico(historico, text):
     if len(historico) == MAX_HISTORICO:
         del historico[0]
