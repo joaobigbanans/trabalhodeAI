@@ -36,3 +36,9 @@ def vender_produto(cod_prod, quantidade):
             print(f"Estoque insuficiente para {produto["nome"]}. Apenas {produto["quantidade"]} unidades disponiveis.")
     else:
         print("Codigo de produto invalido.")
+
+def adicionar_produto(cod_prod, nome, preco, quantidade):
+    if cod_prod in stand:
+        print("Já existe um carro com este código. Atualizando os valores...")
+    stand[cod_prod] = {"nome": nome, "preço": preco, "quantidade": quantidade}
+    print(f"Produto '{nome}' adicionado/atualizado com sucesso!")
