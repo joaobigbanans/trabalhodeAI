@@ -25,3 +25,14 @@ def quat_total():
     for produto in stand.values():
        total += produto["quantidade"]
     print(f"Numero total de carros no stand: {total} ")
+
+def vender_produto(cod_prod, quantidade):
+    if cod_prod in stand:
+        produto = stand[cod_prod]
+        if produto["quantidade"] >= quantidade:
+            produto["quantidade"] -= quantidade
+            print(f"Venda realizada. {quantidade} unidade de {produto["nome"]} vendidas.")
+        else:
+            print(f"Estoque insuficiente para {produto["nome"]}. Apenas {produto["quantidade"]} unidades disponiveis.")
+    else:
+        print("Codigo de produto invalido.")
