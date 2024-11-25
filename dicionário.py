@@ -13,3 +13,15 @@ def print_stand():
         print(f"{x}: Nome: {y["nome"]}, Preço: {y["preço"]:.2f}, Quantidae: {y["quantidade"]} unidades.")
 
 stand["carro2"] = {"nome": "porsche 911 carrera","preço": 140000,"quantidade": 4}
+
+stand["carro2"] = {"nome": "porsche 911 carrera","preço": 140000,"quantidade": 4}
+
+def quant_prod(cod_prod):
+    qtd_produto = stand[cod_prod]["quantidade"]
+    print("O total de " + stand[cod_prod]["nome"] + " do stand é: ", qtd_produto)
+
+def quat_total():
+    total =0
+    for produto in stand.values():
+       total += produto["quantidade"]
+    print(f"Numero total de carros no stand: {total} ")
