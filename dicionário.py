@@ -52,3 +52,33 @@ def menu():
         print("4. quantidade total de carros")
         print("5. Sair do stand")
         opcao = input("Escolha uma opção (1-4): ")
+        
+        if opcao == "1":
+            print_stand()
+        elif opcao == "2":
+            cod_prod = input("Digite o código do carro que deseja comprar: ")
+            try:
+                quantidade = int(input("Digite a quantidade desejada: "))
+                vender_produto(cod_prod, quantidade)
+            except ValueError:
+                print("Por favor, insira um número válido para a quantidade.")
+        elif opcao == "3":
+            cod_prod = input("Digite o código do novo carro: ")
+            nome = input("Digite o nome do carro: ")
+            try:
+                preco = float(input("Digite o preço do carro: "))
+                quantidade = int(input("Digite a quantidade de carros: "))
+                adicionar_produto(cod_prod, nome, preco, quantidade)
+            except ValueError:
+                print("Por favor, insira valores válidos para preço e quantidade.")
+        elif opcao == "4":
+            quat_total()
+
+        elif opcao == "5":
+            print("Obrigado por visitar o stand! Até a próxima.")
+            break
+        else:
+            print("Opção inválida. Por favor, escolha uma opção válida (1-4).")
+
+# Inicia o menu
+menu()    
