@@ -42,3 +42,13 @@ def adicionar_produto(cod_prod, nome, preco, quantidade):
         print("Já existe um carro com este código. Atualizando os valores...")
     stand[cod_prod] = {"nome": nome, "preço": preco, "quantidade": quantidade}
     print(f"Produto '{nome}' adicionado/atualizado com sucesso!")
+
+def menu():
+    while True:
+        print("\n=== MENU DO STAND ===")
+        print("1. Ver carros do stand")
+        print("2. Comprar carros")
+        print("3. Adicionar carros")
+        print("4. quantidade total de carros")
+        print("5. Sair do stand")
+        opcao = input("Escolha uma opção (1-4): ")
